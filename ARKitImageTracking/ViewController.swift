@@ -76,6 +76,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let configuration = ARImageTrackingConfiguration()
         
         configuration.trackingImages = referenceImages
+        configuration.maximumNumberOfTrackedImages = 6
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         
         statusViewController.scheduleMessage("Look around to detect images", inSeconds: 7.5, messageType: .contentPlacement)
